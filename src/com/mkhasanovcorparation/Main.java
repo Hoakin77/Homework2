@@ -2,21 +2,66 @@ package com.mkhasanovcorparation;
 
 public class Main {
 
-    public static void main(String[] args) { //задание 3
-        int[] arr3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        for (int i = 0; i < arr3.length; i++) {
-            if (arr3[i] < 6) arr3[i] *= 2;
-            System.out.print(arr3[i] + " ");
-        }
-        //задание 4
-        int[][] arr4 = new int[7][7];
-        for (int i = 0; i < arr4.length; i++) {
-            for (int j = 0, j2 = arr4[i].length; j < arr4[i].length; j++, j2--) {
-                if (i == j || i == (j2 - 1)) arr4[i][j] = 1;
-                System.out.print(arr4[i][j] + " ");
+    public static void main(String[] args) { //задание 5
+        int[] arr = {2, 6, 8};
+        int min = arr[0], max = arr[0], indMax = 0, indMin = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+                indMax = i;
             }
+            if (arr[i] < min) {
+                min = arr[i];
+                indMin = i;
+            }
+        }
+        System.out.println("Максимальный элемент находится в массиве под индексом " + indMax + " со значением  = " + max);
+        System.out.println("Минимальный элемент находится в массиве под индексом " + indMin + " со значением  = " + min);
+    }// задание 6
+    private static boolean checkBalance(int[] arr2) {
+        int lSum, rSum;
+
+        for (int i = 0; i < arr2.length + 1; i++) {
+            lSum = 0;
+            rSum = 0;
+
+            for (int j = 0; j < i; j++) {
+                lSum += arr2[j];
+            }
+
+            for (int j = i; j < arr2.length; j++) {
+                rSum += arr2[j];
+            }
+
+            if (lSum == rSum) return true;
+        }
+        return false;
+    }
+// задание 7
+    private static void shiftOfNumbers(int[] arrParam, int n) {
+    //посмотрим матрицу до сдвмга
+    for (int i : arrParam) System.out.print(i + " ");
+    System.out.println("\r\n");
+
+    if (n > 0) {
+        for (int x = 0; x < n; x++) {
+            int buf = arrParam[arrParam.length - 1];
+            if (arrParam.length - 1 >= 0) System.arraycopy(arrParam, 0, arrParam, 1, arrParam.length - 1);
+            arrParam[0] = buf;
+            //смотрим матрицу после каждого сдвига
+            for (int i : arrParam) System.out.print(i + " ");
+            System.out.println();
+        }
+    }
+    if (n < 0) {
+        for (int x = 0; x > n; x--) {
+            int buf = arrParam[0];
+            System.arraycopy(arrParam, 1, arrParam, 0, arrParam.length - 1);
+            arrParam[arrParam.length - 1] = buf;
+            //смотрим матрицу после каждого сдвига
+            for (int i : arrParam) System.out.print(i + " ");
             System.out.print("\r\n");
         }
-
     }
+}
 }
