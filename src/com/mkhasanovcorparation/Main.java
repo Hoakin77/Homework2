@@ -37,31 +37,31 @@ public class Main {
         }
         return false;
     }
-// задание 7
+    // задание 7
     private static void shiftOfNumbers(int[] arrParam, int n) {
-    //посмотрим матрицу до сдвмга
-    for (int i : arrParam) System.out.print(i + " ");
-    System.out.println("\r\n");
+        //посмотрим матрицу до сдвмга
+        for (int i : arrParam) System.out.print(i + " ");
+        System.out.println("\r\n");
 
-    if (n > 0) {
-        for (int x = 0; x < n; x++) {
-            int buf = arrParam[arrParam.length - 1];
-            if (arrParam.length - 1 >= 0) System.arraycopy(arrParam, 0, arrParam, 1, arrParam.length - 1);
-            arrParam[0] = buf;
-            //смотрим матрицу после каждого сдвига
-            for (int i : arrParam) System.out.print(i + " ");
-            System.out.println();
+        if (n > 0) {
+            for (int x = 0; x < n; x++) {
+                int buf = arrParam[arrParam.length - 1];
+                if (arrParam.length - 1 >= 0) System.arraycopy(arrParam, 0, arrParam, 1, arrParam.length - 1);
+                arrParam[0] = buf;
+                //смотрим матрицу после каждого сдвига
+                for (int i : arrParam) System.out.print(i + " ");
+                System.out.println();
+            }
+        }
+        if (n < 0) {
+            for (int x = 0; x > n; x--) {
+                int buf = arrParam[0];
+                System.arraycopy(arrParam, 1, arrParam, 0, arrParam.length - 1);
+                arrParam[arrParam.length - 1] = buf;
+                //смотрим матрицу после каждого сдвига
+                for (int i : arrParam) System.out.print(i + " ");
+                System.out.print("\r\n");
+            }
         }
     }
-    if (n < 0) {
-        for (int x = 0; x > n; x--) {
-            int buf = arrParam[0];
-            System.arraycopy(arrParam, 1, arrParam, 0, arrParam.length - 1);
-            arrParam[arrParam.length - 1] = buf;
-            //смотрим матрицу после каждого сдвига
-            for (int i : arrParam) System.out.print(i + " ");
-            System.out.print("\r\n");
-        }
-    }
-}
 }
