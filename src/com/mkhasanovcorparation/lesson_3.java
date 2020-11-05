@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class lesson_3 {
     public static Random random = new Random();
     public static void main(String[] args) {
-      //  guessNumber();
+        guessNumber();
         guessFruit();
     }
     //1. Написать программу, которая загадывает случайное число от 0 до 9, и пользователю дается 3 попытки угадать это число.
