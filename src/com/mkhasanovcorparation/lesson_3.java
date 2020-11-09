@@ -15,7 +15,7 @@ public class lesson_3 {
         //инициализируем сканер
         Scanner scanner = new Scanner(System.in);
         do {
-            int numComp = random.nextInt(10);
+            int numComp = random.nextInt(9);
             System.out.println("Угдай число с 3 попыток от 0 до 9");
             for (int i = 3; i > 0; i--) {
                 System.out.println("Введи свой ответ: (для выхода из игры, просто нажмите Enter)");
