@@ -4,12 +4,12 @@ package com.mkhasanovcorparation.constructors;
 //* Внутри класса «Сотрудник» написать метод, который выводит информацию об объекте в консоль;
 //* Создать массив из 5 сотрудников
 public class Person {
-   String name;
-   String position;
-   String email;
-   int phone;
-   double salary;
-   int age;
+  private String name;
+  private String position;
+  private String email;
+  private int phone;
+  private double salary;
+  private int age;
 
     Person(String name, String position, String email, String phone, double salary, int age) {
         this.name = name;
